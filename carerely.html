@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carerely — Health & Fitness Platform Case Study</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/carerely.css">
+</head>
+
+<body>
+    <!-- Back Button -->
+    <a href="index.html" class="back-button">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+        </svg>
+        <span>Projects</span>
+    </a>
+
+    <!-- Side Navigation -->
+    <nav class="side-nav">
+        <a href="#hero" class="nav-item active">Overview</a>
+        <a href="#overview" class="nav-item">Problem & Solution</a>
+        <a href="#execution" class="nav-item">Execution & Results</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <!-- Carerely Organic Background -->
+        <div class="test-background">
+            <div class="test-orb"></div>
+            <div class="wellness-orb-2"></div>
+            <div class="wellness-orb-3"></div>
+            <div class="floating-particles"></div>
+        </div>
+
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <img src="images/carerely-hero-logo.png" alt="Carerely" class="hero-logo">
+                </h1>
+                <p class="hero-subtitle">From user interviews to <span class="hero-counter"
+                        data-target="10000">~0</span> Users in one year</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section class="overview" id="overview">
+        <div class="overview-container">
+            <!-- Problem -->
+            <div class="overview-item animate-on-scroll">
+                <div class="overview-content">
+                    <h2 class="overview-title">Problem</h2>
+                    <p class="overview-description">
+                        The fitness app market was crowded but broken. <span class="counter-number"
+                            data-target="15">15</span> user interviews revealed three recurring
+                        frustrations:
+                    </p>
+                    <ul class="overview-list">
+                        <li>Essential features hidden behind paid subscriptions.</li>
+                        <li>"Free" apps that offered crippled functionality.</li>
+                        <li>A lack of trusted professionals and community support without financial barriers.</li>
+                    </ul>
+                </div>
+                <div class="overview-visual">
+                    <div class="mobile-mockup">
+                        <img src="images/fitness-app-paywall.png"
+                            alt="Fitness app paywall showing premium subscription pricing" class="mobile-image">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Insight -->
+            <div class="overview-item insight-item animate-on-scroll">
+                <div class="overview-content">
+                    <h2 class="overview-title">Key Insight</h2>
+                    <blockquote class="insight-quote">
+                        Health decisions are emotional and social, not purely transactional. Users didn't just want
+                        calorie counters — they wanted expert guidance and peer motivation without being
+                        nickel-and-dimed.
+                    </blockquote>
+                </div>
+            </div>
+
+            <!-- Solution -->
+            <div class="overview-item animate-on-scroll">
+                <div class="overview-content">
+                    <h2 class="overview-title">Solution</h2>
+                    <p class="overview-description">
+                        Carerely the first truly free, social-native fitness platform.
+                    </p>
+                    <div class="solution-highlights">
+                        <div class="highlight-item">
+                            <h4>MVP Validation</h4>
+                            <p>Built a WordPress MVP using BuddyBoss (a white-label social networking software). This
+                                gave us community forums, user profiles, and content sharing out-of-the-box, allowing us
+                                to test demand in just weeks.
+                            </p>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>Final Platform</h4>
+                            <p>Once we had product market fit, we then built the full product launch which included
+                                comprehensive calorie tracking, visual progress graphs, certified nutritionist content,
+                                and community features.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="overview-visual">
+                    <div class="platform-mockup">
+                        <img src="images/carerely-platform-mockup.png" alt="Carerely Platform Interface"
+                            class="mockup-image">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Target Audience -->
+            <div class="overview-item animate-on-scroll reverse-layout">
+                <div class="overview-content">
+                    <h2 class="overview-title">Target Audience</h2>
+                    <ul class="overview-list">
+                        <li><strong>Demographics:</strong> Adults ages <span class="counter-number"
+                                data-target="18">18</span>-<span class="counter-number" data-target="35">35</span>
+                            (younger millennial/Gen Z)
+                        </li>
+                        <li><strong>Income:</strong> Lower to moderate income, budget-conscious</li>
+                        <li><strong>Psychographics:</strong> Fitness-motivated but cost-sensitive, values authenticity
+                            and community</li>
+                        <li><strong>Behavior:</strong> Has tried multiple fitness apps, abandoned paid subscriptions due
+                            to cost</li>
+                        <li><strong>Pain Points:</strong>
+                            <ul class="sub-list">
+                                <li>Frustrated with limited "free" app functionality</li>
+                                <li>Wants professional guidance without premium costs</li>
+                                <li>Seeks genuine community support, not just solo tracking</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="overview-visual">
+                    <div class="desktop-mockup">
+                        <img src="images/carerely-weight-tracking.png"
+                            alt="Carerely weight tracking interface showing progress charts" class="desktop-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MVP Validation Section -->
+    <section class="mvp-validation" id="execution">
+        <div class="mvp-container">
+            <div class="section-header">
+                <h2 class="section-title">Execution & Results</h2>
+                <p class="section-subtitle">Strategic decisions and measurable outcomes that drove success</p>
+            </div>
+
+            <!-- Leadership Stats -->
+            <div class="leadership-grid">
+                <div class="leadership-card animate-on-scroll">
+                    <div class="card-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                            <path
+                                d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75M13 7a4 4 0 11-8 0 4 4 0 018 0z"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Team Leadership</h3>
+                        <p class="card-description">Led a 6-person development team. Prioritized features using a user
+                            impact vs. technical complexity matrix.</p>
+                    </div>
+                </div>
+
+                <div class="leadership-card animate-on-scroll">
+                    <div class="card-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                            <path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Strategic Decisions</h3>
+                        <p class="card-description">Created a contractor-based system where nutritionists provide
+                            content, allowing us to offer professional guidance for free to users while giving
+                            nutritionists direct access to their target audience.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Metrics Grid -->
+            <div class="metrics-grid">
+                <div class="metric-card primary-metric animate-on-scroll">
+                    <div class="metric-number">87%</div>
+                    <div class="metric-label">MVP to Platform Conversion</div>
+                    <div class="metric-description">Within 3 months, validated demand and converted 87% of MVP users
+                        into our full app.</div>
+                </div>
+
+                <div class="metric-card animate-on-scroll">
+                    <div class="metric-number">~10,000</div>
+                    <div class="metric-label">Users Acquired</div>
+                    <div class="metric-description">First year organic growth</div>
+                </div>
+
+                <div class="metric-card animate-on-scroll">
+                    <div class="metric-number">83%</div>
+                    <div class="metric-label">Long-term Retention</div>
+                    <div class="metric-description">Of original interviewees became active users</div>
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </section>
+
+
+
+    <!-- JavaScript -->
+    <script src="js/carerely-interactions.js"></script>
+</body>
+
+</html>

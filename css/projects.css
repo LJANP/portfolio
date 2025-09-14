@@ -1,0 +1,338 @@
+/* Projects Page Specific Styles */
+
+.project-stories {
+    grid-column: 1 / -1;
+    margin-top: 3rem;
+}
+
+.story-timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 3rem auto 0;
+}
+
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--gradient-primary);
+    transform: translateX(-50%) scaleY(0);
+    transform-origin: top;
+    animation: timelineDraw 1.2s ease forwards;
+    animation-delay: 0.5s;
+    mask: linear-gradient(to bottom,
+            transparent 0%,
+            black 10%,
+            black 90%,
+            transparent 100%);
+    -webkit-mask: linear-gradient(to bottom,
+            transparent 0%,
+            black 10%,
+            black 90%,
+            transparent 100%);
+}
+
+.story-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15rem;
+    position: relative;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: storyFadeUp 0.8s ease forwards;
+}
+
+.story-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.story-marker {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.marker-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    box-shadow: var(--shadow-lg);
+    border: 4px solid white;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: markerPop 0.6s ease forwards;
+}
+
+.story-card {
+    background: white;
+    padding: 2.2rem 2.0rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--gray-200);
+    width: calc(40% - 0.5rem);
+    max-width: 320px;
+    transition: all 0.3s ease;
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: cardFadeIn 0.6s ease forwards;
+}
+
+.story-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+.story-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+}
+
+.story-header h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--gray-900);
+}
+
+.story-impact {
+    background: var(--gradient-primary);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.story-impact.ai-powered {
+    background: linear-gradient(135deg, #ffeb3b, #ff9a56);
+}
+
+.story-impact.health-fitness {
+    background: linear-gradient(135deg, #20B2AA, #87CEEB);
+}
+
+
+
+.story-description {
+    color: var(--gray-600);
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
+    font-size: 0.9rem;
+}
+
+.story-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.8rem;
+}
+
+.tag {
+    background: var(--gray-100);
+    color: var(--gray-600);
+    padding: 0.25rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+/* Test Button Styling */
+.test-button {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.6rem 1.5rem;
+    border: none;
+    border-radius: 10px;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    position: relative;
+    z-index: 999;
+}
+
+.test-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Individual Button Colors */
+.test-button.moodish {
+    background: linear-gradient(135deg, #ffeb3b, #ff9a56, #ff6b6b);
+}
+
+.test-button.carerely {
+    background: linear-gradient(135deg, #87CEEB, #87CEEB, #87CEEB);
+}
+
+
+
+/* Animation Keyframes */
+@keyframes timelineDraw {
+    from {
+        transform: translateX(-50%) scaleY(0);
+    }
+
+    to {
+        transform: translateX(-50%) scaleY(1);
+    }
+}
+
+@keyframes storyFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes markerPop {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes cardFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Staggered Animation Delays */
+.story-item:nth-child(2) {
+    animation-delay: 1.0s;
+}
+
+.story-item:nth-child(2) .marker-icon {
+    animation-delay: 1.2s;
+}
+
+.story-item:nth-child(2) .story-card {
+    animation-delay: 1.8s;
+}
+
+.story-item:nth-child(3) {
+    animation-delay: 2.3s;
+}
+
+.story-item:nth-child(3) .marker-icon {
+    animation-delay: 2.5s;
+}
+
+.story-item:nth-child(3) .story-card {
+    animation-delay: 2.7s;
+}
+
+/* Icon and Logo Animation Keyframes */
+@keyframes iconFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes logoFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/* Moodish-specific icon styling - using img element */
+.marker-icon.moodish-icon {
+    background: white !important;
+    border: 4px solid #fffdfc !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.marker-icon.moodish-icon img {
+    width: 40px !important;
+    height: 40px !important;
+    object-fit: contain !important;
+    border-radius: 50% !important;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: iconFadeIn 0.6s ease forwards;
+    animation-delay: 2.2s;
+}
+
+/* Carerely-specific icon styling - using img element */
+.marker-icon.carerely-icon {
+    background: white !important;
+    border: 4px solid #fbffff !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.marker-icon.carerely-icon img {
+    width: 40px !important;
+    height: 40px !important;
+    object-fit: contain !important;
+    border-radius: 50% !important;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: iconFadeIn 0.6s ease forwards;
+    animation-delay: 2.7s;
+}
+
+/* Project logo styling */
+.project-logo {
+    height: 1.2rem;
+    object-fit: contain;
+    vertical-align: baseline;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: logoFadeIn 0.6s ease forwards;
+}
+
+.carerely-logo {
+    height: 2.3rem;
+    max-width: 120px;
+    object-fit: contain;
+    vertical-align: baseline;
+    animation-delay: 2.9s;
+}

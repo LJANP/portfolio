@@ -1,0 +1,137 @@
+/* Product Concepts Page Specific Styles */
+
+/* Future Concepts Section */
+.future-concepts {
+    margin-top: 3rem;
+}
+
+/* Concept Grid Layout */
+.concept-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.concept-card {
+    background: white;
+    padding: 1.2rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--gray-200);
+    transition: all 0.3s ease;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: conceptFadeUp 0.8s ease forwards;
+    max-width: 280px;
+}
+
+.concept-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+.concept-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    margin: 0 auto 1.5rem;
+    box-shadow: var(--shadow-lg);
+}
+
+.concept-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin-bottom: 0.8rem;
+}
+
+.concept-card p {
+    color: var(--gray-600);
+    line-height: 1.4;
+    font-size: 0.85rem;
+    margin-bottom: 0;
+}
+
+/* Animation Keyframes */
+@keyframes conceptFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Staggered Animation Delays for Concept Cards */
+.concept-card:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+.concept-card:nth-child(2) {
+    animation-delay: 0.6s;
+}
+
+.concept-card:nth-child(3) {
+    animation-delay: 0.9s;
+}
+
+.concept-card:nth-child(4) {
+    animation-delay: 1.2s;
+}
+
+.concept-card:nth-child(5) {
+    animation-delay: 1.5s;
+}
+
+.concept-card:nth-child(6) {
+    animation-delay: 1.8s;
+}
+
+.concept-card:nth-child(7) {
+    animation-delay: 2.1s;
+}
+
+.concept-card:nth-child(8) {
+    animation-delay: 2.4s;
+}
+
+/* Responsive Design for Product Concepts */
+@media (max-width: 768px) {
+    .concept-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .concept-card {
+        padding: 1.5rem;
+    }
+
+    .concept-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .concept-card {
+        padding: 1rem;
+    }
+}
+
+@media (min-width: 1400px) {
+    .concept-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

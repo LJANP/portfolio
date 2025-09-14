@@ -1,0 +1,146 @@
+/* Background Elements */
+.story-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.floating-particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(2px 2px at 20px 30px, rgba(99, 102, 241, 0.3), transparent),
+        radial-gradient(2px 2px at 40px 70px, rgba(139, 92, 246, 0.3), transparent),
+        radial-gradient(1px 1px at 90px 40px, rgba(6, 182, 212, 0.3), transparent);
+    background-size: 100px 100px;
+    animation: particleFloat 20s linear infinite, particleShift 30s ease-in-out infinite;
+}
+
+.gradient-orbs {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(40px);
+    opacity: 0.3;
+    animation: orbFloat 15s ease-in-out infinite;
+}
+
+.orb-1 {
+    width: 300px;
+    height: 300px;
+    background: var(--gradient-primary);
+    top: 20%;
+    left: 10%;
+    animation: orbFloat 15s ease-in-out infinite, orbDrift1 25s ease-in-out infinite;
+}
+
+.orb-2 {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, var(--accent), var(--primary));
+    top: 60%;
+    right: 20%;
+    animation: orbFloat 15s ease-in-out infinite, orbDrift2 20s ease-in-out infinite;
+    animation-delay: -5s, -8s;
+}
+
+.orb-3 {
+    width: 250px;
+    height: 250px;
+    background: linear-gradient(135deg, #ff6b6b, #feca57);
+    bottom: 20%;
+    left: 60%;
+    animation: orbFloat 15s ease-in-out infinite, orbDrift3 18s ease-in-out infinite;
+    animation-delay: -10s, -12s;
+}
+
+/* Background Animation Keyframes */
+@keyframes particleFloat {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(-100px);
+    }
+}
+
+@keyframes particleShift {
+    0%, 100% {
+        background-position: 0px 0px, 0px 0px, 0px 0px;
+    }
+    25% {
+        background-position: 20px 10px, -15px 5px, 10px -8px;
+    }
+    50% {
+        background-position: -10px 20px, 25px -10px, -20px 15px;
+    }
+    75% {
+        background-position: 15px -15px, -20px 20px, 5px -25px;
+    }
+}
+
+@keyframes orbFloat {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    33% {
+        transform: translateY(-30px) rotate(120deg);
+    }
+    66% {
+        transform: translateY(30px) rotate(240deg);
+    }
+}
+
+@keyframes orbDrift1 {
+    0%, 100% {
+        transform: translateX(0px) scale(1);
+    }
+    25% {
+        transform: translateX(50px) scale(1.1);
+    }
+    50% {
+        transform: translateX(-30px) scale(0.9);
+    }
+    75% {
+        transform: translateX(20px) scale(1.05);
+    }
+}
+
+@keyframes orbDrift2 {
+    0%, 100% {
+        transform: translateX(0px) translateY(0px) scale(1);
+    }
+    33% {
+        transform: translateX(-40px) translateY(20px) scale(1.15);
+    }
+    66% {
+        transform: translateX(30px) translateY(-15px) scale(0.85);
+    }
+}
+
+@keyframes orbDrift3 {
+    0%, 100% {
+        transform: translateX(0px) scale(1) rotate(0deg);
+    }
+    20% {
+        transform: translateX(25px) scale(1.08) rotate(72deg);
+    }
+    40% {
+        transform: translateX(-35px) scale(0.92) rotate(144deg);
+    }
+    60% {
+        transform: translateX(15px) scale(1.12) rotate(216deg);
+    }
+    80% {
+        transform: translateX(-20px) scale(0.88) rotate(288deg);
+    }
+}

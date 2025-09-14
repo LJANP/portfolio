@@ -1,0 +1,245 @@
+/* Floating Navigation */
+.floating-nav {
+    position: fixed;
+    top: 50%;
+    right: 2rem;
+    transform: translateY(-50%);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    opacity: 0;
+    animation: navFadeIn 1s ease forwards;
+    animation-delay: 1.5s;
+}
+
+.nav-item {
+    color: var(--gray-400);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: right;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+.nav-item:hover {
+    color: var(--gray-600);
+    transform: translateX(-5px);
+}
+
+.nav-item.active {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.nav-item.active::after {
+    content: '';
+    position: absolute;
+    right: -1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 4px;
+    background: var(--primary);
+    border-radius: 50%;
+}
+
+@keyframes navFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50%) translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(-50%) translateX(0);
+    }
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Chapter Content Layout */
+.chapter-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.story-text {
+    position: relative;
+}
+
+.chapter-number {
+    font-family: var(--font-display);
+    font-size: 8rem;
+    font-weight: 300;
+    color: var(--gray-200);
+    position: absolute;
+    top: -4rem;
+    left: -2rem;
+    z-index: -1;
+    line-height: 1;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: numberFadeIn 0.8s ease forwards;
+}
+
+.chapter-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    color: var(--gray-900);
+    position: relative;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: titleSlideDown 0.8s ease forwards;
+    animation-delay: 0.1s;
+}
+
+.narrative-text {
+    margin-bottom: 3rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: textSlideUp 0.8s ease forwards;
+    animation-delay: 0.3s;
+}
+
+.story-paragraph {
+    font-size: 1.2rem;
+    color: var(--gray-600);
+    line-height: 1.7;
+}
+
+.chapter-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Contact Section */
+.story-conclusion {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+}
+
+.conclusion-text h2 {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--gray-900);
+}
+
+.conclusion-text p {
+    font-size: 1.2rem;
+    color: var(--gray-600);
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    line-height: 1.7;
+}
+
+.connect-action {
+    display: flex;
+    justify-content: center;
+}
+
+.connect-btn {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 1.5rem 2rem;
+    border-radius: 20px;
+    text-decoration: none;
+    color: var(--gray-900);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--gray-200);
+    transition: all 0.3s ease;
+    max-width: 400px;
+}
+
+.connect-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+.btn-content {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.btn-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    margin-right: 1rem;
+}
+
+.btn-text {
+    text-align: left;
+}
+
+.btn-title {
+    display: block;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+}
+
+.btn-subtitle {
+    font-size: 0.9rem;
+    color: var(--gray-600);
+}
+
+/* Animation Keyframes */
+@keyframes numberFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes titleSlideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes textSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

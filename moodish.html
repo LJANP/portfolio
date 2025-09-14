@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moodish — AI-Powered Food Discovery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/moodish.css">
+</head>
+
+<body>
+    <!-- Back Button -->
+    <a href="index.html" class="back-button">← Back to Projects</a>
+
+    <!-- Side Navigation -->
+    <nav class="side-nav">
+        <a href="#problem" class="nav-item">Problem</a>
+        <a href="#insight" class="nav-item">Key Insight</a>
+        <a href="#solution" class="nav-item">Solution</a>
+        <a href="#target-audience" class="nav-item">Target Audience</a>
+        <a href="#implementation" class="nav-item">Implementation</a>
+        <a href="#results" class="nav-item">Results</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <h1 class="hero-title">Moodish</h1>
+                    <p class="hero-subtitle">AI-powered meal recommendations based on how you feel</p>
+                </div>
+                <div class="hero-visual">
+                    <div class="app-mockup">
+                        <img src="images/moodish-app-mockup.png"
+                            alt="Moodish app interface showing mood-based food recommendations" class="mockup-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section id="problem" class="section problem-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">01</span>
+                <h2 class="section-title">Problem</h2>
+            </div>
+            <div class="content-grid">
+                <div class="content-main">
+                    <p class="lead-text">Food delivery apps suffer from a key drop-off: users spend 8-10 minutes
+                        browsing before ordering, and 30% abandon without completing a purchase.</p>
+                </div>
+                <div class="stats-card">
+                    <div class="stat">
+                        <span class="stat-number">8-10</span>
+                        <span class="stat-label">minutes browsing</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">30%</span>
+                        <span class="stat-label">abandon rate</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insight Section -->
+    <section id="insight" class="section insight-section">
+        <div class="container">
+            <div class="section-header" style="text-align: center;">
+                <span class="section-label">02</span>
+                <h2 class="section-title">Key Insight</h2>
+            </div>
+            <div class="insight-content">
+                <div class="insight-narrative">
+                    <p class="narrative-lead">Interviews with 11 users revealed a core mismatch between what apps offer
+                        and what users actually need.</p>
+                    <div class="narrative-flow">
+                        <p class="narrative-text">Apps ask <em>"What cuisine do you want?"</em> while users think <em>"I
+                                don't know what I'm in the mood for."</em></p>
+                        <p class="narrative-text">This disconnect revealed a deeper truth:</p>
+                    </div>
+                </div>
+                <blockquote class="insight-quote">
+                    Food choices are driven by emotion, not logic. Users weren't asking for more options — they wanted
+                    guidance.
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="solution" class="section solution-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">03</span>
+                <h2 class="section-title">Solution</h2>
+            </div>
+            <div class="solution-content">
+                <p class="lead-text">Moodish is an AI-powered app that recommends meals based on how you feel, not just
+                    past orders or cuisine categories.</p>
+
+                <div class="process-steps">
+                    <h3 class="subsection-title">Core Experience</h3>
+                    <div class="steps-grid">
+                        <div class="step">
+                            <span class="step-number">01</span>
+                            <p>Answer 4-5 quick multiple-choice questions about mood</p>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">02</span>
+                            <p>AI agent delivers your meal recommendation with photo and personalized reasoning</p>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">03</span>
+                            <p>Order directly through your preferred delivery app or discover nearby restaurants</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-showcase">
+                    <h4 class="video-title">See It In Action</h4>
+                    <div class="video-wrapper">
+                        <iframe
+                            src="https://www.youtube.com/embed/X_GuLjyPZ6k?start=5&autoplay=0&mute=1&loop=1&playlist=X_GuLjyPZ6k"
+                            title="Moodish App Walkthrough" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Audience Section -->
+    <section id="target-audience" class="section target-audience-section">
+        <div class="container">
+            <div class="section-header centered-header">
+                <span class="section-label">04</span>
+                <h2 class="section-title">Target Audience</h2>
+            </div>
+            <div class="target-audience-content">
+                <ul class="audience-list">
+                    <li><strong>Demographics:</strong> Adults ages <span class="counter-number"
+                            data-target="22">22</span>-<span class="counter-number" data-target="45">45</span>
+                        (millennials and older Gen Z)</li>
+                    <li><strong>Income:</strong> Middle to upper-middle income, regular food delivery users (<span
+                            class="counter-number" data-target="2">2</span>-<span class="counter-number"
+                            data-target="4">4</span>x per week)</li>
+                    <li><strong>Psychographics:</strong> Values convenience and personalization, decision-fatigued</li>
+                    <li><strong>Behavior:</strong> Frequently opens delivery apps but struggles to decide, spends <span
+                            class="counter-number" data-target="8">8</span>-<span class="counter-number"
+                            data-target="10">10</span>+ minutes browsing</li>
+                    <li><strong>Pain Points:</strong>
+                        <ul class="pain-points-list">
+                            <li>Overwhelmed by too many food options and categories</li>
+                            <li>Wastes time scrolling endlessly through menus</li>
+                            <li>Apps focus on cuisine types when users don't know what they want</li>
+                            <li>Seeks emotional connection to food but can't identify cravings</li>
+                            <li>Frustrated by choice paralysis leading to order abandonment</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Implementation Section -->
+    <section id="implementation" class="section implementation-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">05</span>
+                <h2 class="section-title">Implementation</h2>
+            </div>
+            <div class="implementation-content">
+                <p class="body-text">Collaborated with engineering team to implement AI personalization with cost
+                    constraints, using structured prompts to keep API costs under $0.15 per recommendation while
+                    maintaining quality.</p>
+
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <span class="metric-value">$0.15</span>
+                        <span class="metric-label">Cost per recommendation</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-value">3 min</span>
+                        <span class="metric-label">Reduced browsing time</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results" class="section results-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">06</span>
+                <h2 class="section-title">Results</h2>
+            </div>
+            <div class="results-content">
+                <p class="impact-statement">This approach reduced browsing time from 8-10 minutes to under 3 minutes,
+                    replacing decision fatigue with confidence.</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/moodish-animations.js"></script>
+</body>
+
+</html>
