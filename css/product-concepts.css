@@ -2,63 +2,132 @@
 
 /* Future Concepts Section */
 .future-concepts {
-    margin-top: 3rem;
+    margin-top: 10rem;
 }
 
 /* Concept Grid Layout */
 .concept-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
     max-width: 1400px;
     margin: 0 auto;
 }
 
 .concept-card {
-    background: white;
-    padding: 1.2rem;
-    border-radius: 20px;
-    box-shadow: var(--shadow-lg);
-    border: 1px solid var(--gray-200);
-    transition: all 0.3s ease;
-    text-align: center;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85));
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 2rem;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    text-align: left;
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(30px) scale(0.95);
     animation: conceptFadeUp 0.8s ease forwards;
-    max-width: 280px;
+    position: relative;
+    overflow: hidden;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+}
+
+.concept-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
 }
 
 .concept-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-xl);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.95));
+}
+
+.concept-card:hover::before {
+    transform: scaleX(1);
 }
 
 .concept-icon {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     background: var(--gradient-primary);
-    border-radius: 50%;
+    border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 2rem;
-    margin: 0 auto 1.5rem;
-    box-shadow: var(--shadow-lg);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 16px rgba(99, 102, 241, 0.3);
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.concept-card:hover .concept-icon {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
 }
 
 .concept-card h3 {
-    font-size: 1.2rem;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
     font-weight: 600;
     color: var(--gray-900);
-    margin-bottom: 0.8rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    transition: color 0.3s ease;
+}
+
+.concept-card:hover h3 {
+    color: var(--primary);
 }
 
 .concept-card p {
     color: var(--gray-600);
-    line-height: 1.4;
-    font-size: 0.85rem;
-    margin-bottom: 0;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+    transition: color 0.3s ease;
+}
+
+.concept-card:hover p {
+    color: var(--gray-700);
+}
+
+/* Brand-specific styling */
+.concept-card:nth-child(1) .concept-icon {
+    background: #D0271D;
+}
+
+.concept-card:nth-child(1):hover::before {
+    background: #D0271D;
+}
+
+.concept-card:nth-child(2) .concept-icon {
+    background: linear-gradient(135deg, #405DE6, #5B51D8, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80);
+}
+
+.concept-card:nth-child(2):hover::before {
+    background: linear-gradient(135deg, #405DE6, #5B51D8, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80);
+}
+
+.concept-card:nth-child(3) .concept-icon {
+    background: #FF9900;
+}
+
+.concept-card:nth-child(3):hover::before {
+    background: #FF9900;
 }
 
 /* Animation Keyframes */
@@ -67,6 +136,7 @@
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
