@@ -47,6 +47,28 @@ document.addEventListener('DOMContentLoaded', function () {
                                 <li>Submit ad content with preferred posting schedule</li>
                                 <li>Payment held in escrow until content goes live</li>
                             </ul>
+                            
+                            <div class="advertiser-gallery">
+                                <div class="card-stack" id="advertiser-card-stack">
+                                    <div class="stack-card" data-index="0">
+                                        <img src="images/instagram-advertiser-1.png" alt="Advertising Packages - Browse creator rate cards" class="stack-image">
+                                        <div class="card-label">Step 1: View Creator Profile</div>
+                                    </div>
+                                    <div class="stack-card" data-index="1">
+                                        <img src="images/instagram-advertiser-2.png" alt="Creator Profile - View engagement metrics" class="stack-image">
+                                        <div class="card-label">Step 2: Browse Packages</div>
+                                    </div>
+                                    <div class="stack-card" data-index="2">
+                                        <img src="images/instagram-advertiser-3.png" alt="Create Your Ad - Upload content and caption" class="stack-image">
+                                        <div class="card-label">Step 3: Create Your Ad</div>
+                                    </div>
+                                    <div class="stack-card" data-index="3">
+                                        <img src="images/instagram-advertiser-4.png" alt="Submit for Review - Complete order with escrow payment" class="stack-image">
+                                        <div class="card-label">Step 4: Submit for Review</div>
+                                    </div>
+                                </div>
+                                <div class="stack-hint">Click to see next step</div>
+                            </div>
                         </div>
                         
                         <div class="solution-group">
@@ -56,12 +78,34 @@ document.addEventListener('DOMContentLoaded', function () {
                                 <li>Review and approve submitted ads before posting</li>
                                 <li>Automatic payment release when content publishes</li>
                             </ul>
+                            
+                            <div class="creator-gallery">
+                                <div class="card-stack" id="creator-card-stack">
+                                    <div class="stack-card" data-index="0">
+                                        <img src="images/instagram-creator-1.png" alt="Creator Dashboard - View pending ad requests and earnings" class="stack-image">
+                                        <div class="card-label">Step 1: View Dashboard</div>
+                                    </div>
+                                    <div class="stack-card" data-index="1">
+                                        <img src="images/instagram-creator-2.png" alt="Ad Request Details - Review advertiser content and requirements" class="stack-image">
+                                        <div class="card-label">Step 2: Review Ad Request</div>
+                                    </div>
+                                    <div class="stack-card" data-index="2">
+                                        <img src="images/instagram-creator-3.png" alt="Manage Requests - Handle multiple pending advertising requests" class="stack-image">
+                                        <div class="card-label">Step 3: Manage Multiple Requests</div>
+                                    </div>
+                                    <div class="stack-card" data-index="3">
+                                        <img src="images/instagram-creator-4.png" alt="Request Details - View payment info and approve sponsored content" class="stack-image">
+                                        <div class="card-label">Step 4: Approve & Get Paid</div>
+                                    </div>
+                                </div>
+                                <div class="stack-hint">Click to see next step</div>
+                            </div>
                         </div>
                         
                         <div class="solution-group">
                             <h5>For Instagram:</h5>
                             <ul>
-                                <li>Take 10-15% commission on all transactions</li>
+                                <li>Take 5% commission on all transactions</li>
                                 <li>Build creator economy directly into platform</li>
                                 <li>Increase user stickiness through financial relationships</li>
                             </ul>
@@ -163,6 +207,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     if (content) {
                         content.classList.add('reveal-content');
                     }
+
+                    // Initialize card stack interaction
+                    initializeCardStack();
                 }, 600); // Wait for expansion animation to complete
 
             }, 100);
@@ -235,6 +282,47 @@ document.addEventListener('DOMContentLoaded', function () {
             e.preventDefault();
             e.stopPropagation();
             openExpanded();
+        });
+    }
+
+    // Initialize card stack functionality
+    function initializeCardStack() {
+        // Initialize advertiser card stack
+        initializeStack('advertiser-card-stack');
+        
+        // Initialize creator card stack
+        initializeStack('creator-card-stack');
+    }
+
+    // Generic function to initialize any card stack
+    function initializeStack(stackId) {
+        const cardStack = document.getElementById(stackId);
+        if (!cardStack) return;
+
+        let currentIndex = 0;
+        const cards = cardStack.querySelectorAll('.stack-card');
+        const totalCards = cards.length;
+
+        cardStack.addEventListener('click', function () {
+            // Get current top card
+            const currentCard = cards[currentIndex];
+
+            // Add peeling animation
+            currentCard.classList.add('peeling');
+
+            // Move to next card
+            currentIndex = (currentIndex + 1) % totalCards;
+
+            // After animation, reset the peeled card to bottom of stack
+            setTimeout(() => {
+                currentCard.classList.remove('peeling');
+
+                // Reorder z-index for all cards
+                cards.forEach((card, index) => {
+                    const newIndex = (index - currentIndex + totalCards) % totalCards;
+                    card.setAttribute('data-index', newIndex);
+                });
+            }, 600);
         });
     }
 
