@@ -8,8 +8,8 @@
 /* Concept Grid Layout */
 .concept-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
     max-width: 1400px;
     margin: 0 auto;
 }
@@ -29,7 +29,7 @@
     animation: conceptFadeUp 0.8s ease forwards;
     position: relative;
     overflow: hidden;
-    min-height: 280px;
+    min-height: 200px;
     display: flex;
     flex-direction: column;
 }
